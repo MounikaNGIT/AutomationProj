@@ -36,9 +36,7 @@ public class BaseTest implements IAutoConstants{
 		else if (browser.equalsIgnoreCase("firefox")) {
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments(
-					FirefoxOptions.FIREFOX_OPTIONS,          
-				    "--headless=new",                 
-				    "--disable-notifications",
+					FirefoxOptions.FIREFOX_OPTIONS,
 				    "--remote-allow-origins=*");
 			
 		    driver = new FirefoxDriver(options);
@@ -48,9 +46,7 @@ public class BaseTest implements IAutoConstants{
 		else if (browser.equalsIgnoreCase("edge")) {
 			EdgeOptions options = new EdgeOptions();
 			options.addArguments(
-					EdgeOptions.CAPABILITY,          
-				    "--headless=new",                 
-				    "--disable-notifications",
+					EdgeOptions.CAPABILITY,
 				    "--remote-allow-origins=*");
 			
 		    driver = new EdgeDriver(options);
@@ -64,7 +60,6 @@ public class BaseTest implements IAutoConstants{
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		String appUrl = fl.readPropData(PROP_PATH, "url");
 		driver.get(appUrl);
 
